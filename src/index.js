@@ -2,34 +2,51 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-const bookName = "Love You to the Moon and Back";
-const writer = "By: (Alex Clark Art)";
-const pic =
-  "https://cdn.shopify.com/s/files/1/0468/6734/9662/products/Coaster-LoveyouToThemoonandback_1024x1024@2x.jpg?v=1637598287";
+const firstBook = {
+  pic: "https://cdn.shopify.com/s/files/1/0468/6734/9662/products/Coaster-LoveyouToThemoonandback_1024x1024@2x.jpg?v=1637598287",
+  bookName: "Love You to the Moon and Back",
+  writer: "By: (Alex Clark Art)",
+};
+const secondBook = {
+  pic: "https://images-na.ssl-images-amazon.com/images/I/51CvNtFCbZL._SX258_BO1,204,203,200_.jpg",
+  bookName: "I Love You to the Moon And Back",
+  writer: "By: (Little Tiger Press)",
+};
+
+// const bookName = "Love You to the Moon and Back";
+// const writer = "By: (Alex Clark Art)";
+// const pic =
+//   "https://cdn.shopify.com/s/files/1/0468/6734/9662/products/Coaster-LoveyouToThemoonandback_1024x1024@2x.jpg?v=1637598287";
 
 function BookList() {
   return (
     <section className="bookList">
-      <Book job="developer" />
-      <Book designation="software engineer" />
+      <Book
+        pic={firstBook.pic}
+        bookName={firstBook.bookName}
+        writer={firstBook.writer}
+      />
+      <Book
+        pic={secondBook.pic}
+        bookName={secondBook.bookName}
+        writer={secondBook.writer}
+      />
+      {/* <Book designation="software engineer" /> */}
     </section>
   );
 }
 
 const Book = (props) => (
   <article className="book">
-    <Image />
-    <Title />
-    <Author />
-    <p>{props.job}</p>
-    <p>{props.designation}</p>
-    {/* <p>{console.log(props)}</p> */}
+    <img src={props.pic} alt="" />
+    <h1>{props.bookName}</h1>
+    <h5>{props.writer.toLocaleUpperCase()}</h5>
   </article>
 );
 
-const Image = () => <img src={pic} alt="" />;
-const Title = () => <h1>{bookName}</h1>;
-const Author = () => <h5>{writer.toLocaleUpperCase()}</h5>;
+// const Image = () => <img src={pic} alt="" />;
+// const Title = () => <h1>{bookName}</h1>;
+// const Author = () => <h5>{writer.toLocaleUpperCase()}</h5>;
 
 // const Author = () => (
 //   <h5 style={{ color: "crimson", fontFamily: "cursive" }}>
