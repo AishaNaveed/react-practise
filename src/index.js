@@ -7,15 +7,12 @@ function BookList() {
     <section className="bookList">
       <Book />
       <Book />
-      <Book />
-      <Book />
-      <Book />
     </section>
   );
 }
 
 const Book = () => (
-  <article>
+  <article className="book">
     <Image />
     <Title />
     <Author />
@@ -28,7 +25,19 @@ const Image = () => (
     alt=""
   />
 );
-const Title = () => <h1>Love You to the Moon and Back</h1>;
-const Author = () => <h5>By: (Alex Clark Art)</h5>;
+const bookName = "Love You to the Moon and Back";
+
+const Title = () => <h1>{bookName}</h1>;
+
+const Author = () => {
+  const writer = "By: (Alex Clark Art)";
+  return <h5>{writer}</h5>;
+};
+
+// const Author = () => (
+//   <h5 style={{ color: "crimson", fontFamily: "cursive" }}>
+//     By: (Alex Clark Art)
+//   </h5>
+// );
 
 ReactDOM.render(<BookList />, document.getElementById("root"));

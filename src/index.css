@@ -19,6 +19,21 @@ body {
   gap: 2rem;
 }
 
+.book {
+  background-color: lightgray;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+}
+
+.book h1 {
+  color: rebeccapurple;
+  margin-top: 0.5rem;
+}
+
+.book h5 {
+  letter-spacing: 3px;
+}
+
 @media screen and (min-width: 786px) {
   .bookList {
     grid-template-columns: repeat(2, 1fr);
