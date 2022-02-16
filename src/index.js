@@ -36,13 +36,17 @@ function BookList() {
   );
 }
 
-const Book = (props) => (
-  <article className="book">
-    <img src={props.pic} alt="" />
-    <h1>{props.bookName}</h1>
-    <h5>{props.writer.toLocaleUpperCase()}</h5>
-  </article>
-);
+const Book = (props) => {
+  //destructuring the props
+  const { pic, bookName, writer } = props;
+  return (
+    <article className="book">
+      <img src={pic} alt="" />
+      <h1>{bookName}</h1>
+      <h5>{writer.toLocaleUpperCase()}</h5>
+    </article>
+  );
+};
 
 // const Image = () => <img src={pic} alt="" />;
 // const Title = () => <h1>{bookName}</h1>;
