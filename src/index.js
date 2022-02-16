@@ -25,7 +25,9 @@ function BookList() {
         pic={firstBook.pic}
         bookName={firstBook.bookName}
         writer={firstBook.writer}
-      />
+      >
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </Book>
       <Book
         pic={secondBook.pic}
         bookName={secondBook.bookName}
@@ -36,7 +38,7 @@ function BookList() {
   );
 }
 
-const Book = ({ pic, bookName, writer }) => {
+const Book = ({ pic, bookName, writer, children }) => {
   //destructuring the props
   // const { pic, bookName, writer } = props;
   return (
@@ -44,6 +46,8 @@ const Book = ({ pic, bookName, writer }) => {
       <img src={pic} alt="" />
       <h1>{bookName}</h1>
       <h5>{writer.toLocaleUpperCase()}</h5>
+      {children}
+      {/* {props.children} */}
     </article>
   );
 };
