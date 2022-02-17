@@ -4,11 +4,13 @@ import "./index.css";
 
 const Books = [
   {
+    id: 1,
     pic: "https://cdn.shopify.com/s/files/1/0468/6734/9662/products/Coaster-LoveyouToThemoonandback_1024x1024@2x.jpg?v=1637598287",
     bookName: "Love You to the Moon and Back",
     writer: "By: (Alex Clark Art)",
   },
   {
+    id: 2,
     pic: "https://images-na.ssl-images-amazon.com/images/I/51CvNtFCbZL._SX258_BO1,204,203,200_.jpg",
     bookName: "I Love You to the Moon And Back",
     writer: "By: (Little Tiger Press)",
@@ -23,15 +25,8 @@ const Books = [
 function BookList() {
   return (
     <section className="bookList">
-      {Books.map((book) => {
-        const { pic, bookName, writer } = book;
-        return (
-          <div>
-            <img src={pic} alt="" />
-            <h2>{bookName}</h2>
-            <h5>{writer}</h5>
-          </div>
-        );
+      {Books.map((book, index) => {
+        return <Book key={index} book={book}></Book>;
       })}
       {/* <Book
         pic={secondBook.pic}
@@ -43,16 +38,14 @@ function BookList() {
   );
 }
 
-const Book = ({ pic, bookName, writer, children }) => {
+const Book = (props) => {
   //destructuring the props
-  // const { pic, bookName, writer } = props;
+  const { pic, bookName, writer } = props.book;
   return (
     <article className="book">
       <img src={pic} alt="" />
       <h1>{bookName}</h1>
       <h5>{writer.toLocaleUpperCase()}</h5>
-      {children}
-      {/* {props.children} */}
     </article>
   );
 };
