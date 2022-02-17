@@ -25,8 +25,9 @@ const Books = [
 function BookList() {
   return (
     <section className="bookList">
+      {/* key is added so that react can keep track of any item added or deleted from the list, its good to use unique id instead of index because index can be changed but id will remain the same */}
       {Books.map((book, index) => {
-        return <Book key={index} book={book}></Book>;
+        return <Book key={book.id} book={book}></Book>;
       })}
       {/* <Book
         pic={secondBook.pic}
