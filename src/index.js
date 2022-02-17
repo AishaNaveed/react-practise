@@ -2,16 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-const firstBook = {
-  pic: "https://cdn.shopify.com/s/files/1/0468/6734/9662/products/Coaster-LoveyouToThemoonandback_1024x1024@2x.jpg?v=1637598287",
-  bookName: "Love You to the Moon and Back",
-  writer: "By: (Alex Clark Art)",
-};
-const secondBook = {
-  pic: "https://images-na.ssl-images-amazon.com/images/I/51CvNtFCbZL._SX258_BO1,204,203,200_.jpg",
-  bookName: "I Love You to the Moon And Back",
-  writer: "By: (Little Tiger Press)",
-};
+const Books = [
+  {
+    pic: "https://cdn.shopify.com/s/files/1/0468/6734/9662/products/Coaster-LoveyouToThemoonandback_1024x1024@2x.jpg?v=1637598287",
+    bookName: "Love You to the Moon and Back",
+    writer: "By: (Alex Clark Art)",
+  },
+  {
+    pic: "https://images-na.ssl-images-amazon.com/images/I/51CvNtFCbZL._SX258_BO1,204,203,200_.jpg",
+    bookName: "I Love You to the Moon And Back",
+    writer: "By: (Little Tiger Press)",
+  },
+];
 
 // const bookName = "Love You to the Moon and Back";
 // const writer = "By: (Alex Clark Art)";
@@ -21,18 +23,21 @@ const secondBook = {
 function BookList() {
   return (
     <section className="bookList">
-      <Book
-        pic={firstBook.pic}
-        bookName={firstBook.bookName}
-        writer={firstBook.writer}
-      >
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      </Book>
-      <Book
+      {Books.map((book) => {
+        const { pic, bookName, writer } = book;
+        return (
+          <div>
+            <img src={pic} alt="" />
+            <h2>{bookName}</h2>
+            <h5>{writer}</h5>
+          </div>
+        );
+      })}
+      {/* <Book
         pic={secondBook.pic}
         bookName={secondBook.bookName}
         writer={secondBook.writer}
-      />
+      /> */}
       {/* <Book designation="software engineer" /> */}
     </section>
   );
