@@ -32,11 +32,15 @@ function BookList() {
 const Book = (props) => {
   //destructuring the props
   const { pic, bookName, writer } = props;
+  const clickHandle = () => alert("Hello");
   return (
     <article className="book">
       <img src={pic} alt="" />
-      <h1>{bookName}</h1>
+      <h1 onClick={() => console.log(bookName)}>{bookName}</h1>
       <h5>{writer.toLocaleUpperCase()}</h5>
+      <button type="button" onClick={clickHandle}>
+        Just checking
+      </button>
     </article>
   );
 };

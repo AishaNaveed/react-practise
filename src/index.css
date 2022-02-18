@@ -1,7 +1,7 @@
 * {
   margin: 10px;
   padding: 0;
-  background-color: lightgoldenrodyellow;
+  background-color: rgb(202, 247, 255);
 }
 
 body {
@@ -20,18 +20,27 @@ body {
 }
 
 .book {
-  background-color: lightgray;
+  background-color: white;
   border-radius: 1rem;
   padding: 1rem 2rem;
 }
 
 .book h1 {
   color: rebeccapurple;
+  background-color: white;
+  text-decoration: underline;
   margin-top: 0.5rem;
 }
 
 .book h5 {
+  background-color: white;
   letter-spacing: 3px;
+}
+
+.book img {
+  max-height: 300px;
+  max-width: 300px;
+  object-fit: cover;
 }
 
 @media screen and (min-width: 786px) {
